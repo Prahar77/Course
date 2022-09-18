@@ -10,7 +10,6 @@ class HomeController extends Controller
 {
     public function home(){
         $courses = Course::take(3)->get();
-        $faculty = fksdjfs;
         return view('home',compact('courses','faculty'));
     }
 
