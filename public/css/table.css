@@ -1,0 +1,19 @@
+h1 {
+    color: rgb(4, 0, 255);
+    text-align: center;
+    font-family: Cambria;
+    
+}
+
+h5 {
+    color: rgb(0, 38, 255);
+    text-align: center;
+}
+
+body {
+    background: linear-gradient(-90deg, #61c8a2, #23a6d5);
+}
+
+#box{
+    background-color: rgb(140, 165, 191);
+}
