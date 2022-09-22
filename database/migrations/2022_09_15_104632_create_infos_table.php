@@ -15,7 +15,13 @@ return new class extends Migration
     {
         Schema::create('infos', function (Blueprint $table) {
             $table->id();
-
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->integer('phone');
+            $table->boolean('gender');
+            $table->mail('email');
+            $table->password_hash('pass');
+            $table->password_hash('repass');
             $table->timestamps();
         });
     }

@@ -14,7 +14,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $user = User::latest()->get();
+        return view('userinfo',compact('courses'));
     }
 
     /**
@@ -24,7 +25,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view ('User.userform');
     }
 
     /**
@@ -35,7 +36,25 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'phone' => 'numeric',
+            'gender' => 'required',
+            'email' => 'mail',
+            'pass' => 'required',
+            'repass' => 'required'
+        ]);
+        Course::create([
+            'firstname' => $request->firstname,
+            'lastname' => $request->lastname,
+            'phone' => $request->phone,
+            'gender' => $request->gender,
+            'email' =>$request->email,
+            'pass' =>$request->pass
+        ]);
+        return redirect()->route('index');
+
     }
 
     /**

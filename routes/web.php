@@ -25,15 +25,15 @@ Route::post('/admin/Admin/store', 'App\Http\Controllers\Admin\AdminController@st
 Route::get('admin/Admin/list', 'App\Http\Controllers\Admin\AdminController@index')->name('admin.index');
 
 
-Route::get('/admin/Admin/show/{id}', 'App\Http\Controllers\Admin\AdminController@show')->name('show');
-Route::get('/admin/Admin/edit/{id}', 'App\Http\Controllers\Admin\AdminController@edit')->name('edit');
-Route::post('/admin/Admin/update/{id}', 'App\Http\Controllers\Admin\AdminController@update')->name('update');
-Route::get('/admin/Admin/delete/{id}', 'App\Http\Controllers\Admin\AdminController@delete')->name('delete');
+Route::get('/admin/Admin/show/{id}', 'App\Http\Controllers\Admin\AdminController@show')->name('admin.show');
+Route::get('/admin/Admin/edit/{id}', 'App\Http\Controllers\Admin\AdminController@edit')->name('admin.edit');
+Route::post('/admin/Admin/update/{id}', 'App\Http\Controllers\Admin\AdminController@update')->name('admin.update');
+Route::get('/admin/Admin/delete/{id}', 'App\Http\Controllers\Admin\AdminController@delete')->name('admin.delete');
 
 
 
 Route::get('/', 'App\Http\Controllers\Admin\AdminController@index2')->name('admin.index2');
 
 
-Route::get('/user/User/create', 'App\Http\Controllers\User\UserController@create');
-Route::post('/user/User/store', 'App\Http\Controllers\User\UserController@create');
+Route::get('/user/User/create', 'App\Http\Controllers\User\UserController@create.user');
+Route::post('/user/User/store', 'App\Http\Controllers\User\UserController@store.user')->name('admin.store');

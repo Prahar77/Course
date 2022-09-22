@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('css/form.css')}}">
 
-    
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #1069d6;">
   <a class="navbar-brand" href="#">Coursecom</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -60,19 +60,23 @@
         <div class="col-md-3">
             <label for="price" class="form-label">Price in USD ($): </label>
             <input type="text" class="form-control" id="price" name= "price">
+            @error('price') <span style="color: red">{{$message}}</span> @enderror
         </div>
         <div class="col-12">
             <label for="credit" class="form-label">Credit Hours: </label>
             <input type="text" class="form-control" id="credit" name= "credit">
+            @error('credit') <span style="color: red">{{$message}}</span> @enderror
         </div>
         <div class="col-12">
             <label for="type" class="form-label">Course type: </label> <br>
             <label><input type="radio" name="type" required value="laptop"> Compulsory </label>
             <label><input type="radio" name="type" required value="copy"> Optional </label>
+            @error('type') <span style="color: red">{{$message}}</span> @enderror
         </div><br>
         <div class="col-md-12">
             <label for="duration" class="form-label">Course Duration: </label>
             <input type="text" class="form-control" id="duration" name = "duration">
+            @error('duration') <span style="color: red">{{$message}}</span> @enderror
         </div>
 
         <div class="col-md-4">
@@ -83,11 +87,13 @@
             <option>Laptop with high specifications</option>
             <option>Pen / Copy</option>
             </select>
+            @error('requirement') <span style="color: red">{{$message}}</span> @enderror
         </div>
 
         <div class="col-md-12">
             <label for="description" class="form-label">Description</label>
             <textarea class="form-control" id="description" name="description" maxlength="500"></textarea>
+            @error('description') <span style="color: red">{{$message}}</span> @enderror
         </div> <br>
 
 
