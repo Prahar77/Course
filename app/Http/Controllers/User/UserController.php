@@ -65,7 +65,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $course = Course::find($id);
+        return view ('userinfo',compact('user'));
     }
 
     /**
@@ -102,3 +103,4 @@ class UserController extends Controller
         //
     }
 }
+

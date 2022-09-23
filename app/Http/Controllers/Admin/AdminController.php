@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin\Course;
+use App\Http\Requests\StoreCourseDetailsRequest;
 
 class AdminController extends Controller
 {
@@ -41,22 +42,22 @@ class AdminController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCourseDetailsRequest $request)
     {
-        $request->validate([
-            'coursename' => 'required',
-            'price' => 'numeric',
-            'credit' => 'required',
-            'type' => 'required',
-            'duration' => 'required',
-            'requirement' => 'required',
-            'description' => 'required'
-        ],
-        [
-            'coursename.required' => 'Please enter the course name',
-            'price.required' => 'Please enter the price'
-        ]
-    );
+    //     $request->validate([
+    //         'coursename' => 'required',
+    //         'price' => 'numeric',
+    //         'credit' => 'required',
+    //         'type' => 'required',
+    //         'duration' => 'required',
+    //         'requirement' => 'required',
+    //         'description' => 'required'
+    //     ],
+    //     [
+    //         'coursename.required' => 'Please enter the course name',
+    //         'price.required' => 'Please enter the price'
+    //     ]
+    // );
 
         Course::create([
             'coursename' => $request->coursename,

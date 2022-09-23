@@ -20,15 +20,15 @@ Route::get('/', function () {
 
 
 
-Route::get('/admin/Admin/create', 'App\Http\Controllers\Admin\AdminController@create');
-Route::post('/admin/Admin/store', 'App\Http\Controllers\Admin\AdminController@store')->name('admin.store');
-Route::get('admin/Admin/list', 'App\Http\Controllers\Admin\AdminController@index')->name('admin.index');
+Route::get('/Admin/create', 'App\Http\Controllers\Admin\AdminController@create');
+Route::post('/Admin/store', 'App\Http\Controllers\Admin\AdminController@store')->name('admin.store');
+Route::get('/Admin/list', 'App\Http\Controllers\Admin\AdminController@index')->name('admin.index');
 
 
-Route::get('/admin/Admin/show/{id}', 'App\Http\Controllers\Admin\AdminController@show')->name('admin.show');
-Route::get('/admin/Admin/edit/{id}', 'App\Http\Controllers\Admin\AdminController@edit')->name('admin.edit');
-Route::post('/admin/Admin/update/{id}', 'App\Http\Controllers\Admin\AdminController@update')->name('admin.update');
-Route::get('/admin/Admin/delete/{id}', 'App\Http\Controllers\Admin\AdminController@delete')->name('admin.delete');
+Route::get('/Admin/show/{id}', 'App\Http\Controllers\Admin\AdminController@show')->name('admin.show');
+Route::get('/Admin/edit/{id}', 'App\Http\Controllers\Admin\AdminController@edit')->name('admin.edit');
+Route::post('/Admin/update/{id}', 'App\Http\Controllers\Admin\AdminController@update')->name('admin.update');
+Route::get('/Admin/delete/{id}', 'App\Http\Controllers\Admin\AdminController@delete')->name('admin.delete');
 
 
 
@@ -36,4 +36,11 @@ Route::get('/', 'App\Http\Controllers\Admin\AdminController@index2')->name('admi
 
 
 Route::get('/user/User/create', 'App\Http\Controllers\User\UserController@create.user');
-Route::post('/user/User/store', 'App\Http\Controllers\User\UserController@store.user')->name('admin.store');
+Route::post('/user/User/store', 'App\Http\Controllers\User\UserController@store.user')->name('user.store');
+Route::get('/User/list', 'App\Http\Controllers\User\UserController@index')->name('user.index');
+
+
+Route::get('/User/show/{id}', 'App\Http\Controllers\User\UserController@show')->name('user.show');
+Route::get('/User/edit/{id}', 'App\Http\Controllers\User\UserController@edit')->name('user.edit');
+Route::post('/User/update/{id}', 'App\Http\Controllers\User\UserController@update')->name('user.update');
+Route::get('/User/delete/{id}', 'App\Http\Controllers\User\UserController@delete')->name('user.delete');
