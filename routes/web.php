@@ -32,10 +32,10 @@ Route::get('/Admin/delete/{id}', 'App\Http\Controllers\Admin\AdminController@del
 
 
 
-Route::get('/', 'App\Http\Controllers\Admin\AdminController@index2')->name('admin.index2');
+Route::get('/', 'App\Http\Controllers\Admin\UserController@index')->name('admin.index');
 
 
-Route::get('/user/User/create', 'App\Http\Controllers\User\UserController@create.user');
+Route::get('/User/create', 'App\Http\Controllers\User\UserController@create');
 Route::post('/user/User/store', 'App\Http\Controllers\User\UserController@store.user')->name('user.store');
 Route::get('/User/list', 'App\Http\Controllers\User\UserController@index')->name('user.index');
 

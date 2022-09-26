@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 
     <!-- Main css -->
-    <link rel="stylesheet" href="css/userstyle.css">
+    <link rel="stylesheet" href="{{asset('css/userstyle.css')}}">
 </head>
 <body>
     <h1>USER PROFILE SIGN UP FORM</h1>
@@ -26,21 +26,21 @@
                         <form method="POST" class="register-form" id="register-form" action="{{route('user.store')}}">
                             @csrf
                             <div class="form-group">
-                                <label for="firstname"><i class="zmdi zmdi-account material-icons-name"> First Name: </i></label>
+                                <label for="firstname"><i class="zmdi zmdi-account material-icons-name"> </i></label>
                                 <input type="text" name="firstname" id="firstname" placeholder="Your First Name"/>
                                 @error('firstname') <span style="color: red">{{$message}}</span> @enderror
                             </div>
                             <div class="form-group">
-                                <label for="lastname"><i class="zmdi zmdi-account material-icons-name"> Last Name: </i></label>
+                                <label for="lastname"><i class="zmdi zmdi-account material-icons-name">  </i></label>
                                 <input type="text" name="lastname" id="lastname" placeholder="Your Last Name"/>
                                 @error('lastname') <span style="color: red">{{$message}}</span> @enderror
                             </div>
                             <div class="form-group">
-                                <label for="phone"> <i class="zmdi zmdi-account material-icons-name"> Phone Number: </i></label>
-                                <input type="tel" class="form-control" id="phone" name= "phone">
+                                <label for="phone"> <i class="zmdi zmdi-account material-icons-name">  </i></label>
+                                <input type="tel" class="form-control" id="phone" name= "phone" placeholder="Your Phone Name">
                             </div>
                             <div class="form-group">
-                                <label for="gender" class="zmdi zmdi-account material-icons-name">Gender: </label> <br>
+                                <label for="gender" class="zmdi zmdi-account material-icons-name"> </label> <br>
                                 <label><input type="radio" name="gender" required value="male"> Male </label>
                                 <label><input type="radio" name="gender" required value="female"> Female </label>
                                 <label><input type="radio" name="gender" required value="Others"> Others </label>
@@ -71,7 +71,7 @@
                         </form>
                     </div>
                     <div class="signup-image">
-                        <figure><img src="images/signup-image.jpg" alt="sing up image"></figure>
+                        <figure><img src="images/signup-image.jpg" alt=""></figure>
                         <a href="#" class="signup-image-link">I have already signed up, Login here.</a>
                     </div>
                 </div>

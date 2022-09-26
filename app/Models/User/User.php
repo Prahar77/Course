@@ -14,7 +14,6 @@ class User extends Model
         'phone',
         'gender',
         'email',
-        'pass',
-        'repass',
+        'pass'
     ];
 }

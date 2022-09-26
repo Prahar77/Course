@@ -15,9 +15,9 @@
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
 
-@include('Layouts.Partials.navbar')
+@include('Admin.Layouts.Partials.navbar')
 
-@include('Layouts.Partials.sidebar')
+@include('Admin.Layouts.Partials.sidebar')
 
     @yield('content')
 

@@ -4,18 +4,21 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\User\User;
+use App\Http\Requests\StoreUserDetailsRequest;
+
 
 class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
-     */
+    //  * @return \Illuminate\Http\Response
+    //  */
     public function index()
     {
         $user = User::latest()->get();
-        return view('userinfo',compact('courses'));
+        return view('',compact('courses'));
     }
 
     /**
@@ -25,7 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view ('User.userform');
+        return view ('Frontend.User.userform');
     }
 
     /**
@@ -34,17 +37,18 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreUserDetailsRequest $request)
+
     {
-        $request->validate([
-            'firstname' => 'required',
-            'lastname' => 'required',
-            'phone' => 'numeric',
-            'gender' => 'required',
-            'email' => 'mail',
-            'pass' => 'required',
-            'repass' => 'required'
-        ]);
+        // $request->validate([
+        //     'firstname' => 'required',
+        //     'lastname' => 'required',
+        //     'phone' => 'numeric',
+        //     'gender' => 'required',
+        //     'email' => 'mail',
+        //     'pass' => 'required',
+        //     'repass' => 'required'
+        // ]);
         Course::create([
             'firstname' => $request->firstname,
             'lastname' => $request->lastname,
@@ -53,7 +57,7 @@ class UserController extends Controller
             'email' =>$request->email,
             'pass' =>$request->pass
         ]);
-        return redirect()->route('index');
+        return redirect()->route('course');
 
     }
 

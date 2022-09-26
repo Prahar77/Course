@@ -20,11 +20,7 @@ class AdminController extends Controller
         return view('Admin.list',compact('courses'));
     }
 
-    public function index2()
-    {
-        $courses = Course::latest()->get();
-        return view('User.home',compact('courses'));
-    }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -60,13 +56,13 @@ class AdminController extends Controller
     // );
 
         Course::create([
-            'coursename' => $request->coursename,
-            'price' => $request->price,
-            'credit' => $request->credit,
-            'type' => $request->type,
-            'duration' =>$request->duration,
-            'requirement' =>$request->requirement,
-            'description' =>$request->description,
+            'coursename'    => $request->coursename,
+            'price'         => $request->price,
+            'credit'        => $request->credit,
+            'type'          => $request->type,
+            'duration'      =>$request->duration,
+            'requirement'   =>$request->requirement,
+            'description'   =>$request->description,
 
         ]);
         return redirect()->route('index');
@@ -127,7 +123,7 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-        $course =Course::find($id);
+        $course = Course::find($id);
         $course->delete();
         return redirect()->route('index');
     }

@@ -1,27 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{asset('css/home.css')}}">
-
-    <div class="nav">
-        <div class="logo">Coursecom</div>
-        <ul>
-            <li><a href="#section1" class="active">Home</a></li>
-            <li><a href="#section2">Courses</a></li>
-            <li><a href="#section3">Admin</a></li>
-            <li><a href="#section4">User profile</a></li>
-        </ul>
-    </div>
-    </head>
-<body>
-
-<br>
-<br>
-<br>
+@extends('Admin.Layouts.master')
+@section('content')
 
     <h1> Courses Available </h1>
     <div class="container" >
@@ -45,12 +23,5 @@
 
       @endforeach
 
-</body>
-</html>
+      @endsection
 
-
-
-
-
-</body>
-</html>

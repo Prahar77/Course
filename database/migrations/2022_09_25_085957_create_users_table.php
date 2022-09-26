@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('lastname');
             $table->integer('phone');
             $table->boolean('gender');
-            $table->mail('email');
+            $table->string('email');
             $table->string('pass');
             $table->timestamps();
         });
