@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css?v=3.2.0') }}">
 
 <body class="hold-transition sidebar-mini">
-    <div class="wrapper">
+    
 
 @include('Admin.Layouts.Partials.navbar')
 

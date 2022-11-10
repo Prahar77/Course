@@ -5,10 +5,10 @@
     <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
-    <a href="index3.html" class="nav-link">Home</a>
+    <a href="{{route('admin.index')}}" class="nav-link">Home</a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
-    <a href="#" class="nav-link">Admin</a>
+    <a href="{{route('admin.index')}}" class="nav-link">Admin</a>
     </li>
     <li class="nav-item d-none d-sm-inline-block">
     <a href="#" class="nav-link">User</a>
@@ -134,6 +134,13 @@
     <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
     <i class="fas fa-th-large"></i>
     </a>
+
+    </li>
+    <li class="nav-item">
+        <form action="{{route('logout')}}" method="POST">
+        @csrf
+        <button>Logout</button>
+        </form>
     </li>
     </ul>
     </nav>

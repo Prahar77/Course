@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-@extends('Layouts.master')
+
+@extends('Frontend.Layouts.master')
 @section('content')
 
     <div class="card">
@@ -44,11 +36,9 @@
                     <a href="{{route('user.delete',$course->id)}}" class="btn btn-primary">Delete</a> </td>
                  </tr>
                  @endforeach
-              </tbody>
-          </table>
+                </tbody>
+            </table>
         </div>
     </div>
-
-</body>
-</html>
+@endsection
 

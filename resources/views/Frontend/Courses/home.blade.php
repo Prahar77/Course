@@ -1,9 +1,10 @@
 @extends('Admin.Layouts.master')
 @section('content')
-
+<div class="content-wrapper">
+    <section class="content-header">
     <h1> Courses Available </h1>
     <div class="container" >
-   <div class="row">
+    <div class="row">
       @foreach($courses as $key => $course)
        <div class="col-3">
          <div class="card" id= "box" style="width: 20rem;">
@@ -18,10 +19,11 @@
             <a href="{{route('admin.delete',$course->id)}}" class="btn btn-primary">Delete</a>
           </div>
         </div>
-
+       </div>
+    </section>
     </div>
 
-      @endforeach
+   @endforeach
 
-      @endsection
+@endsection
 

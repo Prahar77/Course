@@ -14,13 +14,13 @@ use App\Http\Controllers\User\UserController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function (Request $request) {
     return view('welcome');
 });
 
 
 
-Route::get('/Admin/create', 'App\Http\Controllers\Admin\AdminController@create');
+Route::get('/Admin/create', 'App\Http\Controllers\Admin\AdminController@create')->name('admin.create');
 Route::post('/Admin/store', 'App\Http\Controllers\Admin\AdminController@store')->name('admin.store');
 Route::get('/Admin/list', 'App\Http\Controllers\Admin\AdminController@index')->name('admin.index');
 
@@ -32,7 +32,7 @@ Route::get('/Admin/delete/{id}', 'App\Http\Controllers\Admin\AdminController@del
 
 
 
-Route::get('/', 'App\Http\Controllers\Admin\UserController@index')->name('admin.index');
+//Route::get('/home', 'App\Http\Controllers\Admin\UserController@index')->name('user.index');
 
 
 Route::get('/User/create', 'App\Http\Controllers\User\UserController@create');
@@ -44,3 +44,7 @@ Route::get('/User/show/{id}', 'App\Http\Controllers\User\UserController@show')->
 Route::get('/User/edit/{id}', 'App\Http\Controllers\User\UserController@edit')->name('user.edit');
 Route::post('/User/update/{id}', 'App\Http\Controllers\User\UserController@update')->name('user.update');
 Route::get('/User/delete/{id}', 'App\Http\Controllers\User\UserController@delete')->name('user.delete');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home.index');

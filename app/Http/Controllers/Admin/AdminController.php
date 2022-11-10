@@ -20,7 +20,7 @@ class AdminController extends Controller
         return view('Admin.list',compact('courses'));
     }
 
-    
+
 
     /**
      * Show the form for creating a new resource.
@@ -29,7 +29,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view ('Admin.form');
+        return view('Admin.form');
     }
 
     /**
@@ -56,16 +56,16 @@ class AdminController extends Controller
     // );
 
         Course::create([
-            'coursename'    => $request->coursename,
-            'price'         => $request->price,
-            'credit'        => $request->credit,
-            'type'          => $request->type,
+            'coursename'    =>$request->coursename,
+            'price'         =>$request->price,
+            'credit'        =>$request->credit,
+            'type'          =>$request->type,
             'duration'      =>$request->duration,
             'requirement'   =>$request->requirement,
             'description'   =>$request->description,
 
         ]);
-        return redirect()->route('index');
+        return redirect()->route('admin.index');
 
     }
 
@@ -104,13 +104,13 @@ class AdminController extends Controller
     {
         $course = Course::find($id);
         $course->update([
-            'coursename' => $request->coursename,
-            'price' => $request->price,
-            'credit' => $request->credit,
-            'type' => $request->type,
-            'duration' =>$request->duration,
-            'requirement' =>$request->requirement,
-            'description' =>$request->description,
+            'coursename'    =>$request->coursename,
+            'price'         =>$request->price,
+            'credit'        =>$request->credit,
+            'type'          =>$request->type,
+            'duration'      =>$request->duration,
+            'requirement'   =>$request->requirement,
+            'description'   =>$request->description,
         ]);
         return redirect()->route('index');
     }

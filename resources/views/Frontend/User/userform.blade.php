@@ -1,18 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> USER PROFILE SIGN UP FORM </title>
 
-    <!-- Font Icon -->
+@extends('Frontend.Layouts.master')
+@section('content')
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 
     <!-- Main css -->
     <link rel="stylesheet" href="{{asset('css/userstyle.css')}}">
-</head>
-<body>
     <h1>USER PROFILE SIGN UP FORM</h1>
     <section>
     <div class="main">
@@ -39,24 +31,24 @@
                                 <label for="phone"> <i class="zmdi zmdi-account material-icons-name">  </i></label>
                                 <input type="tel" class="form-control" id="phone" name= "phone" placeholder="Your Phone Name">
                             </div>
+                            <div class="button">
+                                <label for="gender"> <i class="zmdi zmdi-account material-icons-name"> Gender: </label> <br>
+                                <label> <input type="radio" name="gender" required value="male">Male </label>
+                                <label> <input type="radio" name="gender" required value="female">Female </label>
+                                <label> <input type="radio" name="gender" required value="Others">Others </label>
+                            </div>
                             <div class="form-group">
-                                <label for="gender" class="zmdi zmdi-account material-icons-name"> </label> <br>
-                                <label><input type="radio" name="gender" required value="male"> Male </label>
-                                <label><input type="radio" name="gender" required value="female"> Female </label>
-                                <label><input type="radio" name="gender" required value="Others"> Others </label>
-                            </div><br>
-                            <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"> Email address: </i></label>
+                                <label for="email"><i class="zmdi zmdi-email"> </i></label>
                                 <input type="email" name="email" id="email" placeholder="Your Email"/>
                                 @error('email') <span style="color: red">{{$message}}</span> @enderror
                             </div>
                             <div class="form-group">
-                                <label for="pass"><i class="zmdi zmdi-lock"> Password: </i></label>
+                                <label for="pass"><i class="zmdi zmdi-lock"> </i></label>
                                 <input type="password" name="pass" id="pass" placeholder="Password"/>
                                 @error('pass') <span style="color: red">{{$message}}</span> @enderror
                             </div>
                             <div class="form-group">
-                                <label for="repass"><i class="zmdi zmdi-lock-outline"> Confirm Password: </i></label>
+                                <label for="repass"><i class="zmdi zmdi-lock-outline"> </i></label>
                                 <input type="password" name="repass" id="repass" placeholder="Repeat your password"/>
                             </div>
                             <div class="form-group">
@@ -65,7 +57,7 @@
                                 @error('repass') <span style="color: red">{{$message}}</span> @enderror
                             </div>
                             <div class="form-group form-button">
-                                <button type="submit" class="btn btn-primary">Sign up</button>
+                                <button type="submit" class="btn btn-primary">Sign in</button>
                                 <input type="submit" name="signup" id="signup" class="form-submit" value="Register"/>
                             </div>
                         </form>
@@ -77,8 +69,7 @@
                 </div>
             </div>
         </section>
-</body>
-</html>
+@endsection
 
 
 

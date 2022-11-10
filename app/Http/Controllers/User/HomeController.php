@@ -17,4 +17,9 @@ class HomeController extends Controller
         $courses = Course::all();
         return view('courseList',compact('courses'));
     }
+    public function index()
+    {
+        $courses = Course::latest()->get();
+        return view('Frontend.Courses.home',compact('courses'));
+    }
 }
